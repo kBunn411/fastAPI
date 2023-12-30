@@ -11,13 +11,23 @@ from . database import engine,SessionLocal,get_db
 
 from .routers import post,user,auth,vote
 from .config import settings
+from fastapi.middleware.cors import CORSMiddleware
 
 
 # models.Base.metadata.create_all(bind=engine) #creates the database
 
 
-
+#origins = ["https://www.google.com"] can talk to google.com
+# CORE STUFF IMPORTANT
 app = FastAPI()
+
+ #app.add_middleware(
+  #  CORSMiddleware, #FUNCTION RUNS BEFORE EVERY REQUEST
+  #  allow_origins=origins, #specify which domains can talk to api
+  #  allow_credentials=True,
+  #  allow_methods=["*"], #all certein methids lie get, post etc
+  #  allow_headers=["*"],
+#)
 
 
 
