@@ -1,12 +1,10 @@
 import time
-from typing import Optional,List
 from fastapi import Body, FastAPI, Response, status,HTTPException,Depends
 from fastapi.encoders import jsonable_encoder #used to get different warnings like 404 not found
-from pydantic_settings import BaseSettings #use to make sure the data input is the input we want
-from random import randrange
-import pyodbc
+from pydantic_settings import BaseSettings #use to make sure the data input is the input we wa
+
 from sqlalchemy.orm import Session
-from . import models, schemas,utils
+from . import models
 from . database import engine,SessionLocal,get_db
 
 from .routers import post,user,auth,vote
